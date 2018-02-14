@@ -1,27 +1,26 @@
 angular.module( 'edosoft', [
     'ui.router',
     'templates-app',
-    'templates-common',
-    'angulartics',
-    'angulartics.google.analytics',
-    'angulartics.scroll',
-    'feeds',
-    'angular-carousel'
+    'templates-common'
+
 ])
 
     .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider) {
 
-        $locationProvider.html5Mode(true).hashPrefix('!');
+          $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+          });
 
         $stateProvider
             .state('home',{
-                url:'/',
-                views: {
-                    "main": {
-                        controller: 'HomeCtrl',
-                        templateUrl: 'home/home_es.tpl.html'
-                    }
+              url:'/',
+              views: {
+                 "main": {
+                    controller: 'HomeCtrl',
+                    templateUrl: 'home/home_es.tpl.html'
                 }
+            }
             })
             .state('info', {
                 url: '/info',
@@ -31,8 +30,8 @@ angular.module( 'edosoft', [
                         templateUrl: 'info/info_es.tpl.html'
                     }
                 }
-            })
-            .state('info_en', {
+        })
+        .state('info_en', {
                 url: '/en/info',
                 views: {
                     "main": {
@@ -148,7 +147,7 @@ angular.module( 'edosoft', [
         });
 
     })
-    .controller('HomeCtrl', function HomeCtrl($scope,$location) {
+    .controller('HomeCtrl', function HomeCtrl($scope) {
 
     })
     .service('AnchorLinkService', function ($location, $anchorScroll,$window){
@@ -161,21 +160,49 @@ angular.module( 'edosoft', [
         };
     })
     .controller( 'InfoCtrl', function InfoCtrl ( $scope, $state) {
-            $state.reload();
-            console.log('InfoCtrl', $scope);
+
     })
     .controller( 'ContactCtrl', function ContactCtrl ($scope) {
-        console.log('ContactCtrl', $scope);
+
     })
     .controller( 'TeamCtrl', function TeamCtrl ( $scope ) {
-            console.log('TeamCtrl', $scope);
+
     })
     .controller( 'ServicesCtrl', function ServicesCtrl ($scope) {
-        console.log('ServiceCtrl', $scope);
+
+              $scope.showgmail = 'false';
+
+              // Image click behaviour
+              $scope.openInNewWindow = function(id){
+
+                    switch(id) {
+                      case 'show-calendar':
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  true;
+                        break;
+                      case 'meetings-title':
+                        document.getElementById('meetings-indicator').style.display = 'block';
+                        document.getElementById('meetings-description').style.display = 'block';
+                        break;
+                      case 'signage-title':
+                        document.getElementById('signage-indicator').style.display = 'block';
+                        document.getElementById('signage-description').style.display = 'block';
+                        break;
+                      case 'kiosk-title':
+                        document.getElementById('kiosk-indicator').style.display = 'block';
+                        document.getElementById('kiosk-description').style.display = 'block';
+                        break;
+                      default:
+                        $scope.showcalendar = false;
+                        $scope.showgmail = true;
+
+                    }
+
+              };
+
 
     })
     .controller( 'AboutCtrl', function AboutCtrl ($scope) {
-        console.log('AboutCtrl', $scope);
 
     })
 

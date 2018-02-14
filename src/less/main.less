@@ -172,7 +172,7 @@ p {
     margin:0 0 20px;
     color: #595B5B;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
     text-align : left;
     margin-top: 10px;
@@ -258,12 +258,12 @@ h4 {
     color: #5071ae;
     font-weight:400;
     margin:0;
-    margin:5px 0 14px 14px;
+    margin:5px 0px 14px 14px;
     font-family:'Ubuntu Mono', monospace;
     font-size:2.5em;
     letter-spacing:normal;
-    line-height:27px;
-    text-align: center;
+    line-height:45px;
+    text-align: left;
     margin-bottom: 35px;
     margin-top: 35px;
 }
@@ -488,17 +488,19 @@ margin-bottom:20px;
     text-transform:uppercase;
 }
 .navbar .dropdown-menu {
-    padding:0;
+    padding:5px;
     margin:0;
+    text-align: center;
     min-width:190px;
-    background-color: #cfcfcf;
-    border:none;
+    color: #2b81af;
+    border: none;
     -webkit-border-radius:0;
     -moz-border-radius:0;
     border-radius:0;
-    li a {
-        font-weight:300;
+    li a .item {
+        font-weight:50;
         text-transform:uppercase;
+        text-align: left
         padding:9px 20px;
         font-size:12px;
         -webkit-transition:all 200ms ease-in;
@@ -507,8 +509,8 @@ margin-bottom:20px;
         transition:all 200ms ease-in;
         color:#999999;
     }
-    li a:hover {
-        background-color:#cfcfcf;
+    li a:hover a:focus {
+        background-color:#1e347b ;
         color:#ffffff;
     }
     li:last-child a {
@@ -1615,7 +1617,7 @@ ul.post-desc {
     }
     li:before {
         content:"\f099";
-        font-family:'FontAwesome';
+       // font-family:'FontAwesome';
         margin-right:15px;
         font-size:16px;
         color:#5071ae;
@@ -2633,7 +2635,7 @@ span.results-number {
 .icon-square {
     display:inline-block;
     i {
-        font-family:"FontAwesome";
+   //     font-family:"FontAwesome";
         font-weight:normal;
         font-style:normal;
         line-height:1;
@@ -2761,6 +2763,67 @@ body.invoice {
     line-height:22px;
     text-transform:capitalize;
 }
+
+.quote-green {
+    background: #6bab78;
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 50%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:before {
+        top: 0;
+        transform: skewY(-3deg);
+        transform-origin: 0 100%;
+    }
+
+    &:after {
+        bottom: 0;
+        transform: skewY(-3deg);
+        transform-origin: 100% 0;
+    }
+}
+.quote-red {
+    background: #dd5a5f;
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 50%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:before {
+        top: 0;
+        transform: skewY(-3deg);
+        transform-origin: 0 100%;
+    }
+
+    &:after {
+        bottom: 0;
+        transform: skewY(-3deg);
+        transform-origin: 100% 0;
+    }
+}
 .background-green{
     background-color: #6bab78;
     /* -webkit-filter: opacity(90%);
@@ -2812,17 +2875,95 @@ body.invoice {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 
 }
+.resize_fit_center {
+    max-width:100%;
+    max-height:100%;
+    vertical-align: middle;
+}
+
+.shaped{
+
+    shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+    shape-margin: 20px;
+}
+
+
+// slanted edges here
+.quote0 {
+  background: #5071ae;
+  position: relative;
+  z-index: 1;
+
+  &:before,
+  &:after {
+      background: inherit;
+      content: '';
+      display: block;
+      height: 50%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      -webkit-backface-visibility: hidden; // for Chrome Windows
+  }
+
+  &:before {
+      top: 0;
+      transform: skewY(0deg);
+      transform-origin: 0 100%;
+  }
+
+  &:after {
+      bottom: 0;
+      transform: skewY(-3deg);
+      transform-origin: 100% 0;
+  }
+}
+
+.quote-blue {
+    background: #5071ae;
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 50%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:before {
+        top: 0;
+        transform: skewY(-3deg);
+        transform-origin: 0 100%;
+    }
+
+    &:after {
+        bottom: 0;
+        transform: skewY(-3deg);
+        transform-origin: 100% 0;
+    }
+}
+
 .background-blue{
-    background-color: #5071ae;
-   /* filter: opacity(90%); */
+    background-image: url(img/inicio.jpeg);
+    -webkit-filter: opacity(90%);
+    filter: opacity(90%);
+    /*border-top: 1px solid #ddd;*/
     text-align: center;
     overflow: hidden;
     margin: 0 0 0px;
-    padding: 0;
     position: relative;
+    background-position: center;
+    background-size: cover;
     width: 100%;
     min-height: 200px;
-    /* -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; */
 
     > h1{
         display: table-cell;
@@ -2851,9 +2992,9 @@ body.invoice {
 
 .rectangle-rotate1{
     background-color: #5071ae;
-    /* -webkit-filter: opacity(90%);
+    /* -webkit-filter: opacity(90%); */
     filter: opacity(90%);
-    /*border-top: 1px solid #ddd;*/
+    /*border-top: 1px solid #ddd; */
     text-align: center;
     overflow: hidden;
     margin: 0 0 0px;
@@ -2864,7 +3005,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /*transform: rotate(-5deg);*/
+    transform: rotate(-5deg);
     top: 6em;
     left: 0;
 }
@@ -2881,9 +3022,9 @@ body.invoice {
     /*white-space: nowrap;*/
     width: 100%;
     min-height: 200px;
-    /* z-index: 2; */
+    z-index: 2;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-   /*  transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: -6em;
     left: 0;
 }
@@ -2902,7 +3043,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: 6em;
     left: 0;
 }
@@ -2921,7 +3062,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: -6em;
     left: 0;
 }
@@ -2940,7 +3081,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: 6em;
     left: 0;
 }
@@ -2959,7 +3100,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: -6em;
     left: 0;
 }
@@ -2978,7 +3119,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: 6em;
     left: 0;
 }
@@ -2997,7 +3138,7 @@ body.invoice {
     min-height: 200px;
     z-index: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    /* transform: rotate(-5deg); */
+    transform: rotate(-5deg);
     top: -6em;
     left: 0;
 }
@@ -4284,6 +4425,20 @@ height: 3000px;
     border: 1px solid #162f50;
     color: #162f50 !important;
 }
+.button-green{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #6bab78;
+    color: white !important;
+    border: none;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.button-green:hover{
+    background-color: white;
+    border: 1px solid #162f50;
+    color: #162f50 !important;
+}
+
 .BlueButtonDetail{
     font-family: 'Ubuntu', sans-serif;
     background-color: #162f50;
@@ -4427,7 +4582,7 @@ background-color: linear-gradient(rgba(163, 192, 230, 0.92));
     padding-bottom: 20px;
     padding-right: 20px;
     padding-left: 20px;
-    padding-top: 50px;
+    padding-top: 20px;
     height: 100%;
     min-height: 220px;
     text-align: left;
@@ -4478,7 +4633,7 @@ background-color: linear-gradient(rgba(163, 192, 230, 0.92));
 .rectangle-14 {
     background-color: #f3f7fc;
     /*border-left: 1px solid #162f50;*/
-    //padding-bottom: 55px;
+    padding-bottom: 55px;
     padding-right: 55px;
     padding-left: 55px;
     padding-top: 50px;
@@ -4576,34 +4731,34 @@ min-height: 300px;
     margin: auto;
 }
 
-/*.background-photo1{
+.background-photo1{
     position:relative;
     z-index:100;
-    background-image: url(img/edosoft-partner.png);
+    background-image: url(img/gsuite-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .background-photo2{
     position:relative;
     z-index:100;
-    background-image: url(img/edosoft-metodologia.png);
+    background-image: url(img/edosoft-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}*/
+}
 .background-photo3{
     position:relative;
-    z-index:100;
+    background-size: cover;
     background-image: url(img/desarrollo-movil.png);
     background-repeat: no-repeat;
-    background-size: cover;
      -webkit-filter: grayscale(0%);
     -webkit-transition: .5s ease-in-out;
     -moz-filter: grayscale(0%);
-    -moz-transition: .5s ease-in-out;
-    -o-filter: grayscale(0%);
-    -o-transition: .5s ease-in-out;
+    -moz-transition: 2.5s ease-in-out;
+    -o-filter: grayscale(10%);
+    -o-transition: 2.5s ease-in-out;
 }
 .background-photo3:hover{
+    background-size: cover;
     -webkit-filter: grayscale(0%);
     -webkit-transition: .5s ease-in-out;
     -moz-filter: grayscale(0%);
@@ -4611,14 +4766,15 @@ min-height: 300px;
     -o-filter: grayscale(0%);
     -o-transition: .5s ease-in-out;
 }
-/*
+
 .background-photo4{
     position:relative;
     z-index:100;
-    background-image: url(img/edosoft-equipo.png);
+    padding-right: 100px;
+    background-image: url(img/edosoft-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-}*/
+}
 .background-photo5{
     position:relative;
     z-index:100;
@@ -4985,6 +5141,9 @@ a {
 }
 .white-tittle{
     color:white;
+    text-align: left;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 .blue-row{
     background-color: #5071ae;

@@ -51,23 +51,13 @@
     <html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
 
 </head>
-<body data-spy="scroll" data-ui-view="main">
-<!-- Google Tag Manager -->
-<!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CH6FX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5CH6FX');</script>-->
-<!-- End Google Tag Manager -->
-
+<body data-spy="scroll" ui-view="main">
 <!--default footer end here-->
 <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
 <script type="text/javascript" src="<%= file %>"></script>
 <% }); %>    
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22feeds%22%2C%22version%22%3A%221.0%22%2C%22nocss%22%3Atrue%7D%5D%7D">
-</script>
+<!--<script type="text/javascript" src="https://www.google.com/jsapi?autoload=%7B%22modules%22%3A%5B%7B%22name%22%3A%22feeds%22%2C%22version%22%3A%221.0%22%2C%22nocss%22%3Atrue%7D%5D%7D">
+</script>-->
 <script type="application/ld+json">
 {
  "@context" : "http://schema.org",

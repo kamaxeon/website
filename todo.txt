@@ -1,6 +1,0 @@
-- Footer que no tape
-- Responsive primera parte
-- Hacer formas fotos
-- Crear div de color
-- Centrarfoto kit meet
-

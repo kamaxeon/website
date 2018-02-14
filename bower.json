@@ -15,10 +15,8 @@
   },
   "dependencies": {
     "angular-dynamic-locale": "0.1.21",
-    "angulartics": "~0.19.0",
-    "angular-feeds": "*",
-    "angular-touch": "*",
-    "angular-carousel": "*"
+    "angular-feeds": "*"
+
   },
   "resolutions": {
     "angular": "~1.3.15",

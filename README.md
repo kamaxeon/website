@@ -14,7 +14,7 @@ Corporative website for Edosoft Factory.
     │   ├── less                # LESS/CSS files with the webpages' style
     │   └── index.html          # <head> of the generated HTML code
     ├── vendor                  # Folder with the downloaded Bower modules
-    ├── bower.json   bow           # File with Bower packages
+    ├── bower.json              # File with Bower packages
     ├── Gruntfile.js            # File with Grunt tasks and plugins
     ├── package.json            # File with Node.js packages
     └── s3_website.yml          # AWS S3 configuration file (used by Jenkins)
@@ -39,6 +39,6 @@ $ bower install
 $ grunt watch
 ```
 
-Finally, open `web-sites/edosoft/build/index.html` in your browser. Alternatively, the `grunt watch` command should open a new tab on your browser with the compiled page.
+Finally, open `website/build/index.html` in your browser. Alternatively, the `grunt watch` command should open a new tab on your browser with the compiled page.
 
 Happy hacking!
