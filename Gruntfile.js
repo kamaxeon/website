@@ -1,5 +1,6 @@
 module.exports = function ( grunt ) {
 
+
     // grunt.initConfig({
     //     pkg: grunt.file.readJSON("package.json"),
     //
@@ -171,9 +172,8 @@ module.exports = function ( grunt ) {
      * our project assets (images, fonts, etc.) and javascripts into
      * `build_dir`, and then to copy the assets to `compile_dir`.
      */
-    copy: {
-     info: {
-            files: [{
+    copy: {info: {
+      files: [{
                 src: 'src/app/info/*',
                 dest: 'build/info/',
                 cwd: '.',

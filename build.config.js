@@ -31,8 +31,7 @@ module.exports = {
 
     html: [ 'src/index.html' ],
     less: 'src/less/main.less',
-    info: 'src/**/info/*.html',
-
+    info: 'src/**/info/*.html'
   },
 
   /**
@@ -75,12 +74,17 @@ module.exports = {
         'vendor/bootstrap/dist/js/bootstrap.min.js',
         'vendor/wow/dist/wow.min.js',
         'vendor/waypoints/lib/noframework.waypoints.js',
+        'vendor/angulartics/dist/angulartics.min.js',
+        'vendor/angulartics/dist/angulartics-ga.min.js',
+        'vendor/angulartics/dist/angulartics-scroll.min.js',
         'vendor/angular-feeds/app/angular-feeds/angular-feeds.js',
-
+        'vendor/angular-touch/angular-touch.min.js',
+        'vendor/angular-carousel/dist/angular-carousel.min.js'
 
     ],
     css: [
         'vendor/animate.css/animate.css',
+        'vendor/components-font-awesome/css/font-awesome.css',
         'vendor/angular-feeds/app/angular-feeds/angular-feeds.css',
         'vendor/angular-carousel/dist/angular-carousel.min.css'
     ],
@@ -88,8 +92,11 @@ module.exports = {
 
     ],
       fonts:
-          [
-
-           ]
+          ['vendor/components-font-awesome/fonts/FontAwesome.otf',
+              'vendor/components-font-awesome/fonts/fontawesome-webfont.eot',
+              'vendor/components-font-awesome/fonts/fontawesome-webfont.svg',
+              'vendor/components-font-awesome/fonts/fontawesome-webfont.ttf',
+              'vendor/components-font-awesome/fonts/fontawesome-webfont.woff',
+              'vendor/components-font-awesome/fonts/fontawesome-webfont.woff2']
   }
 };
