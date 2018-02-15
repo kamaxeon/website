@@ -103,6 +103,24 @@ angular.module( 'edosoft', [
                 }
               }
             })
+            .state('cif', {
+              url: '/consultora-factora/',
+              views: {
+                "main": {
+                  controller: 'CifCtrl',
+                  templateUrl: 'cif/cif_es.tpl.html'
+                }
+              }
+            })
+            .state('cif_en', {
+              url: '/en/cif',
+              views: {
+                "main": {
+                  controller: 'CifCtrl',
+                  templateUrl: 'cif/cif_en.tpl.html'
+                }
+              }
+            })
             .state('contact', {
                 url: '/contact',
                 views: {
@@ -176,13 +194,16 @@ angular.module( 'edosoft', [
             $window.scrollTo(0,0);
         };
     })
-    .controller( 'InfoCtrl', function InfoCtrl ( $scope, $state) {
+    .controller( 'InfoCtrl', function InfoCtrl ( $scope) {
 
     })
     .controller( 'ContactCtrl', function ContactCtrl ($scope) {
 
     })
     .controller( 'TeamCtrl', function TeamCtrl ( $scope ) {
+
+    })
+    .controller( 'CifCtrl', function CifCtrl ( $scope ) {
 
     })
     .controller( 'ServicesCtrl', function ServicesCtrl ($scope) {
