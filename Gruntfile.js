@@ -188,7 +188,15 @@ module.exports = function ( grunt ) {
                 expand: true,
                 flatten: true
             }]
-     },about: {
+     },iplusd: {
+      files: [{
+        src: 'src/app/iplusd/*',
+        dest: 'build/iplusd/',
+        cwd: '.',
+        expand: true,
+        flatten: true
+      }]
+    },about: {
             files: [{
                 src: 'src/app/about/*',
                 dest: 'build/about/',
@@ -682,7 +690,7 @@ module.exports = function ( grunt ) {
   grunt.registerTask( 'build', [
     'clean','html2js', 'jshint', 'coffeelint', 'coffee', 'less:build',
     'concat:build_css', 'copy:build_app_assets', 'copy:build_vendor_assets','copy:build_vendor_fonts',
-    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'copy:about','copy:about', 'copy:services', 'copy:team', 'copy:contact','copy:info','copy:home', 'index:build'
+    'copy:build_appjs', 'copy:build_vendorjs', 'copy:build_vendorcss', 'copy:about','copy:about', 'copy:services', 'copy:iplusd','copy:team', 'copy:contact','copy:info','copy:home', 'index:build'
   ]);
 
   /**

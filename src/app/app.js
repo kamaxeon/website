@@ -85,6 +85,24 @@ angular.module( 'edosoft', [
                     }
                 }
             })
+            .state('iplusd', {
+              url: '/iplusd',
+              views: {
+                "main": {
+                  controller: 'IplusdCtrl',
+                  templateUrl: 'iplusd/iplusd_es.tpl.html'
+                }
+              }
+            })
+            .state('iplusd_en', {
+              url: '/en/iplusd',
+              views: {
+                "main": {
+                  controller: 'IplusdCtrl',
+                  templateUrl: 'iplusd/iplusd_en.tpl.html'
+                }
+              }
+            })
             .state('contact', {
                 url: '/contact',
                 views: {
@@ -126,9 +144,8 @@ angular.module( 'edosoft', [
 
     .controller( 'AppCtrl', function AppCtrl ( $scope, $location,AnchorLinkService ) {
         /*$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-         if ( angular.isDefined( toState.data.pageTitle ) ) {
-         $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
-
+           if ( angular.isDefined( toState.data.pageTitle ) ) {
+           $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
          }); }*/
         $scope.scrollTo = function(id) {
             AnchorLinkService.scrollTo(id);
@@ -170,19 +187,23 @@ angular.module( 'edosoft', [
     })
     .controller( 'ServicesCtrl', function ServicesCtrl ($scope) {
 
-              $scope.showgmail = 'false';
+            $scope.showgmail =  true;
+            $scope.showcalendar =  false;
+            $scope.showhangouts =  false;
 
               // Image click behaviour
               $scope.openInNewWindow = function(id){
 
                     switch(id) {
                       case 'show-calendar':
+                        $scope.showhangouts =  false;
                         $scope.showgmail =  false;
                         $scope.showcalendar =  true;
                         break;
-                      case 'meetings-title':
-                        document.getElementById('meetings-indicator').style.display = 'block';
-                        document.getElementById('meetings-description').style.display = 'block';
+                      case 'show-hangouts':
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  true;
                         break;
                       case 'signage-title':
                         document.getElementById('signage-indicator').style.display = 'block';
@@ -195,7 +216,7 @@ angular.module( 'edosoft', [
                       default:
                         $scope.showcalendar = false;
                         $scope.showgmail = true;
-
+                        $scope.showhangouts =  false;
                     }
 
               };
@@ -203,6 +224,9 @@ angular.module( 'edosoft', [
 
     })
     .controller( 'AboutCtrl', function AboutCtrl ($scope) {
+
+    })
+    .controller( 'IplusdCtrl', function IplusdCtrl ( $scope, $state) {
 
     })
 

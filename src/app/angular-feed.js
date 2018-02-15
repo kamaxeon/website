@@ -16,7 +16,7 @@ angular.module('feeds-directives', []).directive('feed', ['feedService', '$compi
         },
         controller: ['$scope', '$element', '$attrs', '$timeout', function ($scope, $element, $attrs, $timeout) {
 
-            $scope.newsCarouselPostRender=function(){
+            $scope.angknewsCarouselPostRender=function(){
                 $('.carousel .item').each(function(){
                     var next = $(this).next();
                     if (!next.length) {

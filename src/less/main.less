@@ -482,6 +482,7 @@ margin-bottom:20px;
     vertical-align: middle;
     font-weight:700;
     color:#777777;
+    background-color:transparent;
     font-size:30px;
     line-height:20px;
     font-style:normal;
@@ -492,13 +493,13 @@ margin-bottom:20px;
     margin:0;
     text-align: center;
     min-width:190px;
-    color: #2b81af;
-    border: none;
+    background-color: #cfcfcf;
+    border:none;
     -webkit-border-radius:0;
     -moz-border-radius:0;
     border-radius:0;
-    li a .item {
-        font-weight:50;
+    li a {
+        font-weight:300;
         text-transform:uppercase;
         text-align: left
         padding:9px 20px;
@@ -508,6 +509,37 @@ margin-bottom:20px;
         -moz-transition:all 200ms ease-in;
         transition:all 200ms ease-in;
         color:#999999;
+    }
+    li a:hover {
+        background-color:#1e347b ;
+        color:#ffffff;
+    }
+    li:last-child a {
+        border-bottom:0 !important;
+    }
+}
+
+.dropdown-item {
+    padding:5px;
+    margin:0;
+    text-align: center;
+    min-width:190px;
+    color: #2b81af;
+    border: none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+    li a {
+        font-weight:100;
+        text-transform:uppercase;
+        text-align: left;
+        padding:9px 20px;
+        font-size:12px;
+        -webkit-transition:all 200ms ease-in;
+        -o-transition:all 200ms ease-in;
+        -moz-transition:all 200ms ease-in;
+        transition:all 200ms ease-in;
+        color:#1e347b;
     }
     li a:hover a:focus {
         background-color:#1e347b ;
@@ -2841,6 +2873,37 @@ body.invoice {
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 
 }
+
+.quote-yellow {
+    background: #f7ad5c;
+    position: relative;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 50%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        -webkit-backface-visibility: hidden; // for Chrome Windows
+    }
+
+    &:before {
+        top: 0;
+        transform: skewY(-3deg);
+        transform-origin: 0 100%;
+    }
+
+    &:after {
+        bottom: 0;
+        transform: skewY(-3deg);
+        transform-origin: 100% 0;
+    }
+}
 .background-red{
     background-color: #dd5a5f;
     /* -webkit-filter: opacity(90%);
@@ -3313,7 +3376,14 @@ body.invoice {
     .background-photo3,
     .background-photo4,
     .background-photo5,
-    .background-photo6{
+    .background-photo6,
+    .background-photo7,
+    .background-photo8,
+    .background-photo9,
+    .background-photo10,
+    .background-photo11,
+    .background-photo12
+    {
         display: none;
     }
     .edosoft-title{
@@ -3327,8 +3397,6 @@ body.invoice {
     }
     .BigTitle{
         font-size: 4em !important;
-        margin-top: none !important;
-        margin-bottom: none !important;
     }
     .logo-pyme {
         max-width: 90px;
@@ -3492,8 +3560,6 @@ h2{
     background-color: #f7ad5c;
     width: 179px;
 }
-
-
 
 .employee2:hover {
 
@@ -4588,16 +4654,13 @@ background-color: linear-gradient(rgba(163, 192, 230, 0.92));
     text-align: left;
 }
 .rectangle-10 {
-    /*border-left: 1px solid #162f50;*/
 
     padding-right: 75px;
     padding-left: 75px;
-    padding-top: -75px;
+    padding-top: 75px;
     height: 100%;
     min-height: 600px;
     text-align: center;
-
-
 }
 .rectangle-11 {
     margin-top: 80px;
@@ -4736,29 +4799,24 @@ min-height: 300px;
     z-index:100;
     background-image: url(img/gsuite-1.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 .background-photo2{
     position:relative;
     z-index:100;
     background-image: url(img/edosoft-2.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
 }
 .background-photo3{
     position:relative;
-    background-size: cover;
+    background-size: 100%;
     background-image: url(img/desarrollo-movil.png);
     background-repeat: no-repeat;
-     -webkit-filter: grayscale(0%);
-    -webkit-transition: .5s ease-in-out;
-    -moz-filter: grayscale(0%);
-    -moz-transition: 2.5s ease-in-out;
-    -o-filter: grayscale(10%);
-    -o-transition: 2.5s ease-in-out;
+
 }
 .background-photo3:hover{
-    background-size: cover;
+    background-size: 100%;
     -webkit-filter: grayscale(0%);
     -webkit-transition: .5s ease-in-out;
     -moz-filter: grayscale(0%);
@@ -4769,6 +4827,7 @@ min-height: 300px;
 
 .background-photo4{
     position:relative;
+    background-size: 100%;
     z-index:100;
     padding-right: 100px;
     background-image: url(img/edosoft-1.jpg);
@@ -4777,6 +4836,7 @@ min-height: 300px;
 }
 .background-photo5{
     position:relative;
+    background-size: 100%;
     z-index:100;
     background-image: url(img/chrome-photo.png);
     background-repeat: no-repeat;
@@ -4784,15 +4844,15 @@ min-height: 300px;
 .background-photo6{
     position:relative;
     z-index:100;
-    background-size: cover;
+    background-size: 100%;
     background-image: url(img/chrome-1.png);
     background-repeat: no-repeat;
 }
 
 .background-photo7{
     position:relative;
+    background-size: 100%;
     z-index:100;
-    background-size: cover;
     background-image: url(img/chrome-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -4803,7 +4863,41 @@ min-height: 300px;
     z-index:100;
     background-size: cover;
     background-image: url(img/kit-meet.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.background-photo9{
+    position:relative;
+    background-size: 100%;
+    z-index:100;
+    background-image: url(img/chrome-3.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-photo10{
+    position:relative;
+    background-size: 100%;
+    z-index:100;
+    background-image: url(img/chrome-4.png);
+    background-repeat: no-repeat;
+}
+
+.background-photo11{
+    position:relative;
+    background-size: 100%;
+    z-index:100;
+    background-image: url(img/chrome-5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background-photo12{
+    position:relative;
+    background-size: 50%;
+    z-index:100;
+    background-image: url(img/not-found.png);
     background-repeat: no-repeat;
 }
 .img-responsive-icon{
@@ -4811,6 +4905,10 @@ min-height: 300px;
     max-width: 150px;
 }
 
+img-fluid {
+    max-width: 250px;
+    max-height:180px;
+}
 /*CSS formulario*/
 .formNuevo {
     *::-webkit-input-placeholder {

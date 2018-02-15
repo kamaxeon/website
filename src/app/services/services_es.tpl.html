@@ -40,7 +40,7 @@
         <div class="col-md-8">
             <h4>
                 <div class="blue-indicator-tittle"></div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Inspírate con nuestro asesoramiento técnico y comienza a innovar con G Suite
             </h4>
             <img class="img-gsuite" src="assets/img/gsuite.png" alt="G Suite">
         </div>
@@ -67,8 +67,8 @@
         <!--Aquí empieza g suite iconos-->
         <div id="mas" class="rectangle-1">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 margin20">
+                <div class="row margin-row">
+                    <div class="col-md-3">
                         <div class="service-box service-box text-center wow animated fadeInLeft animated">
                                 <h5>Comunica</h5>
                                 <img src="assets/img/gsuite-1.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
@@ -79,7 +79,7 @@
                                 </p>
                         </div>
                     </div>
-                    <div class="col-md-3 margin20">
+                    <div class="col-md-3">
                         <div class="service-box service-box text-center wow animated fadeInLeft animated">
                             <h5>Colabora</h5>
                             <img src="assets/img/gsuite-3.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
@@ -90,7 +90,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3 margin20">
+                    <div class="col-md-3">
                         <div class="service-box text-center wow animated fadeInLeft animated" data-wow-delay="0.6s">
                             <h5>Almacena</h5>
                             <img src="assets/img/gsuite-2.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
@@ -101,9 +101,8 @@
                                 <br/>
                             </p>
                         </div>
-                        <!--service box-->
                     </div>
-                    <div class="col-md-3 margin20">
+                    <div class="col-md-3">
                         <div class="service-box text-center wow animated fadeInLeft animated" data-wow-delay="0.8s">
                             <h5>Gestiona</h5>
                             <img src="assets/img/gsuite-4.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
@@ -113,17 +112,16 @@
                                 Con G Suite Business tendrá más de 200 políticas de seguridad y configuración para eliminar carga de trabajo a su departamento de IT. Retención y archivo hasta 100 años con Google Vault.
                             </p>
                         </div>
-
                     </div>
                 <!--service col-->
             </div>
             <div class="row gsuite-large lateral-padding">
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" id="gmailicon">
                     <img id="gmail-indicator" class="gsuite-icons" src="assets/img/gmailicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-gmail')" alt="G Mail icon">
-                    <div ng-show="showgmail" class="green-indicator"></div>
+                    <div ng-show="showgmail" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.1s" id="hangoutsicon">
-                    <img id="hangouts-indicator" class="gsuite-icons" src="assets/img/hangoutsicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-gmail')" alt="Hangout icon">
+                    <img id="hangouts-indicator" class="gsuite-icons" src="assets/img/hangoutsicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-hangouts')" alt="Hangout icon">
                     <div ng-show="showhangouts" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.2s" id="calendaricon">
@@ -148,19 +146,23 @@
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.7s" id="slideicon">
                     <img id="slides-indicator" class="gsuite-icons" src="assets/img/slideicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-slides')" alt="Slide icon">
-                    <div class="indicator"></div>
+                    <div ng-show="showhslides" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.8s" id="sitesicon">
                     <img id="sites-indicator" class="gsuite-icons" src="assets/img/sitesicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-sites')" alt="Site icon">
+                    <div ng-show="showsites" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.9s" id="driveicon">
                     <img id="drive-indicator" class="gsuite-icons" src="assets/img/driveicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-drives')" alt="Drive icon">
+                    <div ng-show="showdrives" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="1.0s" id="adminicon">
                     <img id="admin-indicator" class="gsuite-icons" src="assets/img/adminicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-admin')" alt="Admin icon">
+                    <div ng-show="showadmin" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="1.1s" id="keepicon">
                     <img id="keep-indicator" class="gsuite-icons" src="assets/img/keepicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-keep')" alt="Keep icon">
+                    <div ng-show="showkeep" class="indicator"></div>
                 </div>
             </div>
             <div class="gsuite-large lateral-padding gicons-description wow animated fadeIn animated" data-wow-delay="1.2s">
@@ -173,17 +175,17 @@
                         <img class="imgmail" src="assets/img/thegmailapp.png" width="700" alt="G Mail G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="hangouts-description">
+                <div ng-show="showhangouts" class="row" id="hangouts-description">
                     <div class="col-md-4">
                         <h5><b>Hangouts</b></h5>
                         <p>Videoconferencias en alta definición con todo su equipo, con función integrada de pantalla compartida, en cualquier lugar y de uso muy sencillo. Comuníquese por vídeo de la misma forma que en persona: la pantalla muestra automáticamente a la persona que esté hablando en cada momento y el sonido se silencia de forma inteligente para evitar ruidos. Da igual dónde esté su cliente, sentirá que lo tiene delante.</p>
                     </div>
                     <div class="col-md-8">
+
                         <img class="imgmail" src="assets/img/hangoutsmock.png" width="700" alt="Hangout G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                {{ showcalendar}} {{showgmail}}
-                <div ng-show="showcalendar" id="calendar-description">
+                <div ng-show="showcalendar" class="row" id="calendar-description">
                     <div class="col-md-4">
                         <h5><b>Calendar</b></h5>
                         <p>Programación inteligente de reuniones y administración de varios calendarios bajo una única vista para un trabajo más eficaz. Calendar se encarga de “encontrar un hueco” por usted para que no tenga que consultar varios calendarios de forma independiente. Comparta sus calendarios para que las personas vean los detalles completos de un evento o simplemente para que sepan si está disponible.</p>
@@ -192,7 +194,7 @@
                         <img class="imgmail" src="assets/img/calendarmock.png" width="700" alt="Calendar G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="g+-description">
+                <div ng-show="showcalendar"class="row" id="g+-description">
                     <div class="col-md-4">
                         <h5><b>Google +</b></h5>
                         <p>Captación del interés de todo su equipo de trabajo compartiendo experiencias para derribar barreras y generar ideas nuevas desde cualquier lugar. Independientemente de sus equipos, niveles o ubicaciones, las ideas de su empresa formarán parte de una comunidad unida a través de publicaciones y comentarios en Google+. Las mismas metas e ilusiones compartidas por todo un equipo remando en la misma dirección, aunque se encuentren en direcciones opuestas.</p>
@@ -286,10 +288,10 @@
 <!--Chrome section-->
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <h4>
                 <div class="blue-indicator-tittle"></div>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Simplifica tu gestión y agiliza tus resultados en Chrome.
             </h4>
             <img class="img-chrome" src="assets/img/chrome.png" alt="Chrome">
         </div>
@@ -348,15 +350,12 @@
                 <br>
                 <br>
                 <br>
-
             </div>
             <div
                     class="col-md-8 rectangle-10 pull-right background-photo7 wow animated fadeInRight animated" alt="Desarrollo Móvil">
 
             </div>
         </div>
-    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="container">
         <div class="row">
             <div
                     class="col-md-8 rectangle-10 pull-left background-photo8 wow animated fadeInRight animated" alt="Chrome Family">
@@ -372,183 +371,222 @@
                 <br>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Chrome for Signage</h4>
+                <p>Cartelería digital con herramientas de gestión basadas en la nube. Potentes y asequibles players para cartelería digital, que utilizan procesadores de confianza de Intel y el sistema operativo de Google Chrome OS para ofrecer al usuario velocidad, sencillez, y posibilidad de adaptarlo a su propio proyecto.</p>
+            </div>
+            <div
+                    class="col-md-8 rectangle-10 pull-right background-photo9 wow animated fadeInRight animated" alt="Desarrollo Móvil">
+
+            </div>
+        </div>
+        <div class="row">
+            <div
+                    class="col-md-8 rectangle-10 pull-left background-photo10 wow animated fadeInRight animated" alt="Chrome Family">
+
+            </div>
+            <div class="col-md-4">
+                <h4>Chrome for Kiosk</h4>
+                <br>
+                <br>
+                <p>Dispositivos tanto para sus empleados como para sus clientes. Útil para tareas como TPV, Operaciones de Recursos Humanos o Check-In en eventos y Hoteles, entre otras.</p>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-4">
+                    <h4>Gestor de Eventos y Actividades con Chrome.</h4>
+                    <p>La app de Edosoft Factory pensada para reducir los costes en la organización de diferentes eventos o actividades mediante el uso de la última tecnología de Google: checkinapp.edosoft.es</p>
+                </div>
+                <div
+                        class="col-md-8 rectangle-10 pull-right background-photo11 wow animated fadeInRight animated" alt="Desarrollo Móvil">
+
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Sasuke</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div
+                   class="col-md-8 rectangle-10 pull-right background-photo12 wow animated fadeInRight animated" alt="Sasuke">
+
+            </div>
+        </div>
     </div>
 </section>
-<!--GCP-->
+<!--Chrome section End-->
+<!--GCP section -->
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
+            <h4>
+                <div class="blue-indicator-tittle"></div>
+                Toda la innovación de Google a disposición de los desarrollos de tu empresa
+            </h4>
             <img class="img-gcp" src="assets/img/google-cloud-platform.png" alt="Google Cloud Platform">
         </div>
         <div class="col-md-6"></div>
     </div>
 </div>
-<!--<div class="rectangle-rotate1-yellow"></div>-->
-<div class="background-yellow">
+<section class="sectioncolour2">
     <div class="container">
         <div class="row">
-           <div class="col-md-6">
-                <div class="p-height-services">
-                    <p class="p-white"><br> Todo lo que necesitas para crear y escalar aplicaciones de la mano de Edosoft Factory. Con la innovación como filosofía base, los cambios se notan desde el primer momento, tanto en precio como en usabilidad:
-                    </p>
-                    <ul class="p-white">
-                        <li>Consultoría pro-activa para la optimización de modelos y específica para optimizar sistemas exigentes en procesado (rendering, cálculo…)
-                        </li>
-                        <li>Desarrollo de Planes de Migración a nubes públicas, multi-cloud y modelos híbridos.
-                        </li>
-                        <li>Definición de estrategias basadas en seguridad, rendimiento y optimización de costes.
-                        </li>
-                        <li>Integración en los equipos de trabajo a través de nuestros equipos de desarrollo.
-                        </li>
-                        <li>Auditorías de Sistemas para el cálculo del Total Cost of Ownership.</li>
-                    </ul>
+            <div class="quote-yellow">
+                <div>
+                    <br>
+                    <br>
+                    <h5 class="white-tittle">Todo lo que necesitas para crear y escalar aplicaciones de la mano de Edosoft Factory. Con la innovación como filosofía base, los cambios se notan desde el primer momento, tanto en costes como en usabilidad</h5>
+                    <br>
+                    <br>
                 </div>
+                <div style="margin-right:45px; margin-top:-45px;" class="col-md-8 rectangle-10 pull-right background-photo12 wow animated fadeInRight animated" alt="Chrome Family"></div>
             </div>
-            <div class="col-md-6" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row margin-row">
+            <br>
+            <br>
+            <br>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Resourses">
+                <h6>Recursos Informáticos</h6>
+                <p> Desde máquinas virtuales con una relación precio/rendimiento que ofrece ventajas probadas hasta una plataforma de desarrollo de aplicaciones totalmente administrada.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Storage">
+                <h6>Almacenamiento y bases de datos</h6>
+                <p>Almacenamiento de objetos y bases de datos escalables, resistentes y de alto rendimiento para tus aplicaciones.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Networking">
+                <h6>Redes</h6>
+                <p>Productos de red definidos mediante software de última generación en la red de fibra privada de Google.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Big Data">
+                <h6>Big Data</h6>
+                <p>Almacenamiento de datos totalmente administrado, procesamiento por lotes y de transmisiones, exploración de datos, Hadoop/Spark y mensajería fiable.</p>
+            </div>
+        </div>
+        <div class="row margin-row">
+            <br>
+            <br>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Machine Learning">
+                <h6>Aprendizaje automático</h6>
+                <p>Servicios de Machine Learning rápidos, escalables y fáciles de usar. Utiliza nuestros modelos ya preparados o prepáralos tú mismo a partir de tus datos.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="System Admin">
+                <h6>Herramientas de administración</h6>
+                <p>Supervisión, registro, diagnóstico y mucho más. Todo en una consola de administración web o una aplicación móvil muy fáciles de usar.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Development Tools">
+                <h6>Herramientas para desarrolladores</h6>
+                <p>Desarrolla e implementa tus aplicaciones con nuestra interfaz de línea de comandos y otras herramientas para desarrolladores.</p>
+            </div>
+            <div class="col-md-3">
+                <img class="img-product-chrome" src="assets/img/not-found.png" alt="Security">
+                <h6>Identidad y seguridad. </h6>
+                <p>Controla el acceso y la visibilidad de los recursos en una plataforma protegida por el modelo de seguridad de Google.</p>
             </div>
         </div>
     </div>
-</div>
-<!--<div class="rectangle-rotate2-yellow"></div>-->
-<div class="container">
-    <div class="row margin-row">
-        <div class="col-md-6">
-            <img class="img-product-gcp" src="assets/img/1gcp-machinelearning.png" alt="Machine Learning">
-            <h6>Machine Learning</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="col-md-6">
-            <img class="img-product-gcp" src="assets/img/2gcp-bigdata.png" alt="Big Data">
-            <h6>Big Data</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row margin-row">
-        <div class="col-md-6">
-            <img class="img-3product-gcp" src="assets/img/3gcp-arquitecturaescalable.png" alt="Arquitectura Escalable">
-            <h6>Arquitectura escalable</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="col-md-6">
-            <img class="img-product-gcp" src="assets/img/4gcp-arquitectura serverlessnoops.png" alt="Serverless NoOps">
-            <h6>Arquitectura serverless NoOps</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-    </div>
-</div>
+</section>
 <!--GCP section end-->
-
-
-
-<!--departamentos-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h4>Edolab</h4>
-        </div>
-        <div class="col-md-12 rectangle-1">
-            <div class="col-md-8 p-rectangle1">
-                <p>Edosoft Factory tiene como pilar básico la Investigación y Desarrollo, manteniendo el conocimiento de la empresa siempre actualizado a través de diferentes procedimientos:
-                </p>
-                <ul>
-                    <li>Sistemas con Requisitos de Altas Prestaciones y Arquitecturas Complejas. Sistemas críticos con elevadas tasas de transacciones en Tiempo Real y donde suelen intervenir gran cantidad de componentes de distintos fabricantes.</li>
-                    <br>
-                    <li>Sistemas con Recursos Restringidos. Sistemas Embebidos con grandes limitaciones de memoria y recursos de procesamiento, donde los consumos energéticos han de ser limitados.</li>
-                    <br>
-                    <li>Internet de las Cosas (IoT En sus siglas en inglés). En los últimos años Edosoft Factory se ha especializado en la interconexión de los sistemas domésticos y la interoperabilidad entre diferentes productos a través de las redes de la información.</li>
-                </ul>
-                <br>
-                <br>
-            </div>
-            <div class="col-md-4">
-                <div class="col-md-12 margin20">
-                    <a target="_blank" href="https://sede.micinn.gob.es/pyiINFO/buscarPyi.mec?org.apache.struts.taglib.html.TOKEN=ffc25ad29e025e8631816f00aebe2739&nif=B35867472&razonSocial=&ccaa=&nifHidden=B35867472&ccaaHidden=&razonSocialHidden=&nuevoFiltro=NO&buscarPulsado=SI&excelPulsado=NO" title="Ir a 'Sello Pyme Innovadora 2018' en ventana nueva">
-                        <img src="assets/img/pyme_2018.jpg" class="wow animated fadeInUp animated logo-pyme" alt="Sello Pyme Innovadora 2018">
-                    </a>
-                </div>
-                <div class="col-md-12">
-                    <a class="wow animated fadeInUp animated btn btn-lg button-red" href="http://edolab.com/" target="_blank">+ información</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <h4>Edoconsulting</h4>
-            <div class="col-md-12 rectangle-1">
-                <div class="p-rectangle1">
-                    <ul>
-                        <li>Asesoramiento Web Especializado. Edosoft Factory asesora a sus clientes en todo el ciclo de vida de sus proyectos o servicios hasta su despliegue.</li>
-                        <li>Asesoría en Comercio Electrónico. Los servicios e-commerce cobran cada vez mayor importancia en todo tipo de empresas, por lo que es importante implementar correctamente los cambios en todas las fases del proyecto.
-                        </li>
-                        <li>Seguridad y calidad de software. Edosoft Factory ofrece sus más de 10 años de experiencia en Aseguramiento de la calidad, (QA en sus siglas en inglés) para garantizar la calidad del software del cliente.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <h4>Edodev</h4>
-            <div class="col-md-12 rectangle-1">
-                <div class="p-rectangle1">
-                    <p>Servicios de factoría software OnSite/Nearshore. Edosoft Factory adapta los equipos de trabajo al horario, entornos y procedimientos de trabajo del cliente, limitando el riesgo en la delegación de tareas por parte del cliente:
-                    </p>
-                    <ul>
-                        <li>Contratos adaptados a las necesidades del cliente: Fixed Price, Time and Materials, Cost Plus Fixed Fee, Cost Plus Percentage of cost, Cost Plus Incentive Fee, Fixed price Incentive Fee.</li>
-                        <li>Estrictas políticas de seguridad y privacidad.</li>
-                        <li>Metodología Ágil escalada a nivel de empresa para garantizar el valor a nuestros clientes.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--  <div class="col-md-6 rectangle-1" style="margin-top: 50">
-<div class="p-rectangle1">
-<img class="img-responsive-icon" src="assets/img/edodev-icon.png" alt="Edodev">
-<h4>Edodev</h4>
-<div class="p-height-services">
-<p class="wow animated fadeInUp animated">Servicios de factoría software OnSite/Nearshore. Edosoft Factory adapta los equipos de trabajo al horario, entornos y procedimientos de trabajo del cliente, limitando el riesgo en la delegación de tareas por parte del cliente:
-</p>
-<ul>
-<li>Contratos adaptados a las necesidades del cliente: Fixed Price, Time and Materials, Cost Plus Fixed Fee, Cost Plus Percentage of cost, Cost Plus Incentive Fee, Fixed price Incentive Fee.</li>
-<li>Estrictas políticas de seguridad y privacidad.</li>
-<li>Metodología Ágil escalada a nivel de empresa para garantizar el valor a nuestros clientes.</li>
-</ul>
-</div>
-</div>
-</div>-->
-</div>
-</section>
-<!--services section end-->
-<br>
-<br>
-<br>
-<!--blog section-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="BigTitle blog-title wow animated fadeInLeft animated" href="http://blog.edosoft.es//">Blog</h2>
-            <!-- <div class="imagen-fondo">
-<span class="titulos-fondo blog-title wow animated fadeInLeft animated" href="http://blog.edosoft.es//" target="_blank">Blog</span>
-</div>-->
-        </div>
-    </div>
-</div>
-<section id="news" class="parallax" data-stellar-background-ratio="0.5" analytics-on="scrollby">
-    <div class=container>
+<!--About section end-->
+<section class="footer sectioncolour1">
+    <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="center-heading">
-                    <h4><a href="http://blog.edosoft.es//" target="_blank"></a></h4>
-                    <!-- <a class="btn btn-primary btn-lg bluebutton" href="http://blog.edosoft.es//" target="_blank">Accede al blog</a>-->
+            <div class="quote-blue">
+                <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </div>
-                <div class="background-news">
-                    <feed summary="true" id="news-feed" post-render="newsCarouselPostRender();" url="http://blog.edosoft.es/rss/" count="5" template-url="assets/templates/news.tpl.html" />
+            </div>
+            <div class="col-md-12 rectangle-4">
+                <img class="img-responsive wow animated fadeInUp animated" src="assets/img/tmu.gif" alt="Contacto Edosoft Factory">
+                <div class="row">
+                    <div class="col-md-12 div-center">
+                        <p class="info-contact text-contact p-white">
+                            info@edosoft.es<br> Tel +34 828 021 575<br> Fax +34 828 066 081
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 div-center">
+                        <a class="btn btn-lg button-blue" href="https://www.google.es/maps/place/Calle+Antonio+Mar%C3%ADa+Manrique,+3,+35011+Las+Palmas+de+Gran+Canaria,+Las+Palmas/@28.1250282,-15.4401871,17z/data=!3m1!4b1!4m5!3m4!1s0xc40950e441745db:0xa21f99b41e7bb3ca!8m2!3d28.1250282!4d-15.4379984" target="_blank">Mapa</a>
+                    </div>
+                    <div class="col-md-12 div-center">
+                        <a class="btn btn-lg button-blue" href="mailto:info@edosoftfactory.com">Enviar correo</a>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <ul class="list-inline social-1">
+                        <li>
+                            <a href="http://plus.google.com/+EdosoftFactory" target="_blank">
+                                <i class="fa fa-google-plus fa-4x wow animated fadeInUp animated"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://facebook.com/edosoftfactory" target="_blank">
+                                <i class="fa fa-facebook fa-4x wow animated fadeInUp animated"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/edosoftfactory" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="http://linkedin.com/company/edosoft-factory" target="_blank">
+                                <i class="fa fa-linkedin wow animated fadeInUp animated"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://vimeo.com/edolab" target="_blank">
+                                <i class="fa fa-vimeo-square wow animated fadeInUp animated"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/edosoftfactory" target="_blank">
+                                <i class="fa fa-youtube-play wow animated fadeInUp animated"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <div class="col-md-4 col-sm-4 col-xs-4 margin20">
+                        <img src="assets/img/iso-9001.jpg" class="wow animated fadeInUp animated logo" alt="ISO 9001">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 margin20">
+                        <img src="assets/img/iso-14001.jpg" class="wow animated fadeInUp animated logo" alt="ISO 14001">
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 margin20">
+                        <img src="assets/img/iso-27001.jpg" class="wow animated fadeInUp animated logo" alt="ISO 27001">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <span>&copy; 2017 Edosoft Factory S.L. Todos los derechos reservados.</span>
+                        <span>
+                            <a ui-sref="info"><span>Información legal.</span></a>
+                            <a ui-sref="home_en"><span class="active">English version</span></a>
+                            <!--TODO:Incluir link a página con info legal-->
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--blog section end-->
