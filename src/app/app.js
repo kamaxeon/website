@@ -14,13 +14,13 @@ angular.module( 'edosoft', [
 
         $stateProvider
             .state('home',{
-              url:'/',
-              views: {
-                 "main": {
-                    controller: 'HomeCtrl',
-                    templateUrl: 'home/home_es.tpl.html'
+                url:'/',
+                views: {
+                   "main": {
+                      controller: 'HomeCtrl',
+                      templateUrl: 'home/home_es.tpl.html'
+                   }
                 }
-            }
             })
             .state('info', {
                 url: '/info',
@@ -30,15 +30,15 @@ angular.module( 'edosoft', [
                         templateUrl: 'info/info_es.tpl.html'
                     }
                 }
-        })
-        .state('info_en', {
-                url: '/en/info',
-                views: {
-                    "main": {
-                        controller: 'InfoCtrl',
-                        templateUrl: 'info/info_en.tpl.html'
+            })
+            .state('info_en', {
+                    url: '/en/info',
+                    views: {
+                        "main": {
+                            controller: 'InfoCtrl',
+                            templateUrl: 'info/info_en.tpl.html'
+                        }
                     }
-                }
             })
             .state('home_en', {
                 url: '/en/home',
@@ -157,60 +157,44 @@ angular.module( 'edosoft', [
                     }
                 }
             });
+  })
+
+    .controller( 'AppCtrl', function AppCtrl ( $scope, $location) {
+    /*      $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+      if ( angular.isDefined( toState.data.pageTitle ) ) {
+      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+   }); }*/
+    })
+
+    .controller('HomeCtrl', function HomeCtrl($scope,$window) {
+        $window.scrollTo(0, 0);
 
     })
 
-    .controller( 'AppCtrl', function AppCtrl ( $scope, $location,AnchorLinkService ) {
-        /*$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-           if ( angular.isDefined( toState.data.pageTitle ) ) {
-           $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
-         }); }*/
-        $scope.scrollTo = function(id) {
-            AnchorLinkService.scrollTo(id);
-        };
-        $scope.scrollTop = function(){
-            AnchorLinkService.scrollTop();
-        };
-
-        $(window).scroll(function(){
-            var pos = $(window).scrollTop();
-            if (pos >300) {
-                $(".navbar").addClass("static-menu");
-            } else {
-                $(".navbar").removeClass("static-menu");
-            }
-        });
+    .controller( 'InfoCtrl', function InfoCtrl ($scope,$window) {
+        $window.scrollTo(0, 0);
 
     })
-    .controller('HomeCtrl', function HomeCtrl($scope) {
+    .controller( 'ContactCtrl', function ContactCtrl ($scope, $window) {
+        $window.scrollTo(0, 0);
 
     })
-    .service('AnchorLinkService', function ($location, $anchorScroll,$window){
-        this.scrollTo = function(id){
-            $location.hash(id);
-            $anchorScroll();
-        };
-        this.scrollTop = function(){
-            $window.scrollTo(0,0);
-        };
+    .controller( 'TeamCtrl', function TeamCtrl ($scope, $window ) {
+         $window.scrollTo(0, 0);
     })
-    .controller( 'InfoCtrl', function InfoCtrl ( $scope) {
+    .controller( 'CifCtrl', function CifCtrl ($scope, $window ) {
+      $window.scrollTo(0, 0);
 
     })
-    .controller( 'ContactCtrl', function ContactCtrl ($scope) {
-
-    })
-    .controller( 'TeamCtrl', function TeamCtrl ( $scope ) {
-
-    })
-    .controller( 'CifCtrl', function CifCtrl ( $scope ) {
-
-    })
-    .controller( 'ServicesCtrl', function ServicesCtrl ($scope) {
-
+    .controller( 'ServicesCtrl', function ServicesCtrl ($scope, $window) {
+            $window.scrollTo(0, 0);
             $scope.showgmail =  true;
             $scope.showcalendar =  false;
             $scope.showhangouts =  false;
+            $scope.showgplus =  false;
+            $scope.showdocs = false;
+            $scope.showspreasdsheets = false;
+            $scope.showforms = false;
 
               // Image click behaviour
               $scope.openInNewWindow = function(id){
@@ -218,37 +202,79 @@ angular.module( 'edosoft', [
                     switch(id) {
                       case 'show-calendar':
                         $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreadsheets = false;
+                        $scope.showforms = false;
                         $scope.showgmail =  false;
                         $scope.showcalendar =  true;
                         break;
                       case 'show-hangouts':
                         $scope.showgmail =  false;
                         $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreadsheets = false;
+                        $scope.showforms = false;
                         $scope.showhangouts =  true;
                         break;
-                      case 'signage-title':
-                        document.getElementById('signage-indicator').style.display = 'block';
-                        document.getElementById('signage-description').style.display = 'block';
+                      case 'show-gplus':
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreadsheets = false;
+                        $scope.showforms = false;
+                        $scope.showgplus =  true;
                         break;
-                      case 'kiosk-title':
-                        document.getElementById('kiosk-indicator').style.display = 'block';
-                        document.getElementById('kiosk-description').style.display = 'block';
+                      case 'show-docs':
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showdocs = true;
+                        $scope.showspreadsheets = false;
+                        $scope.showforms = false;
+                        $scope.showgplus =  false;
+                        break;
+                      case 'show-spreadsheets':
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showforms = false;
+                        $scope.showspreadsheets = true;
+                        break;
+                      case 'show-forms':
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreadsheets = false;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showforms = true;
                         break;
                       default:
-                        $scope.showcalendar = false;
-                        $scope.showgmail = true;
+                        $scope.showgmail =  true;
+                        $scope.showcalendar =  false;
                         $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreadsheets = false;
+                        $scope.showforms = false;
                     }
 
               };
 
 
     })
-    .controller( 'AboutCtrl', function AboutCtrl ($scope) {
+    .controller( 'AboutCtrl', function AboutCtrl ($scope,$window) {
+    $window.scrollTo(0, 0);
 
     })
-    .controller( 'IplusdCtrl', function IplusdCtrl ( $scope, $state) {
-
+    .controller( 'IplusdCtrl', function IplusdCtrl ( $scope, $window) {
+    $window.scrollTo(0, 0);
     })
 
 ;

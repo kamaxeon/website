@@ -6,19 +6,33 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
-            <a class="page-scroll" ui-sref="home_en"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
+            <a class="page-scroll" ui-sref="home"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbarResposive">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="page-scroll" ui-sref="services">Qué hacemos</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Qué hacemos
+                    </a>
+                    <div class="dropdown-menu">
+                        <div>
+                            <a class="dropdown-item" ui-sref="services" ui-sref-active="active">Asociado a Gougle Cloud</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="iplusd">Investigación + Desarrollo</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="cif">Consultoría / Factoría</a>
+                        </div>
+                    </div>
+                </li>
                 <li><a class="page-scroll" ui-sref="team">Quiénes somos</a></li>
-                <li><a class="page-scroll" href="#contact">Contacto</a></li>
+                <li><a class="page-scroll" ui-sref="contact">Contacto</a></li>
             </ul>
         </div>
     </div>
 </nav>
+<!-- /Navigation end -->
 <br>
 <br>
 <br>
@@ -142,11 +156,11 @@
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.6s" id="formicon">
                     <img id="forms-indicator" class="gsuite-icons" src="assets/img/formicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-forms')" alt="Form icon">
-                    <div ng-show="showhforms" class="indicator" class="indicator"></div>
+                    <div ng-show="showforms" class="indicator" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.7s" id="slideicon">
                     <img id="slides-indicator" class="gsuite-icons" src="assets/img/slideicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-slides')" alt="Slide icon">
-                    <div ng-show="showhslides" class="indicator"></div>
+                    <div ng-show="showslides" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="0.8s" id="sitesicon">
                     <img id="sites-indicator" class="gsuite-icons" src="assets/img/sitesicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-sites')" alt="Site icon">
@@ -194,7 +208,7 @@
                         <img class="imgmail" src="assets/img/calendarmock.png" width="700" alt="Calendar G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div ng-show="showcalendar"class="row" id="g+-description">
+                <div ng-show="showgplus" ng-show="showcalendar" class="row" id="g+-description">
                     <div class="col-md-4">
                         <h5><b>Google +</b></h5>
                         <p>Captación del interés de todo su equipo de trabajo compartiendo experiencias para derribar barreras y generar ideas nuevas desde cualquier lugar. Independientemente de sus equipos, niveles o ubicaciones, las ideas de su empresa formarán parte de una comunidad unida a través de publicaciones y comentarios en Google+. Las mismas metas e ilusiones compartidas por todo un equipo remando en la misma dirección, aunque se encuentren en direcciones opuestas.</p>
@@ -203,7 +217,7 @@
                         <img class="imgmail" src="assets/img/googlemock.jpg" width="700" alt="Google+ G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="docs-description">
+                <div ng-show="showdocs" class="row" id="docs-description">
                     <div class="col-md-4">
                         <h5><b>Docs</b></h5>
                         <p>Con sus propios compañeros o con personas ajenas a su empresa, visualice instantáneamente los cambios que introducen los demás o acceda al historial de revisión ilimitado. Las versiones anteriores se guardan indefinidamente y no consumen espacio de almacenamiento. Además puede importar sus documentos para editarlos al instante y exportar su trabajo al formato que necesite, sin instalaciones de software adicional.</p>
@@ -212,7 +226,7 @@
                         <img class="imgmail" src="assets/img/docsmock.png" width="700" alt="Doc G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="spreadsheets-description">
+                <div ng-show="showspreadsheets" class="row" id="spreadsheets-description">
                     <div class="col-md-4">
                         <h5><b>Sheets</b></h5>
                         <p>Desde las más sencillas fórmulas hasta potentes funciones y gráficos complejos que le permitirán generar informes de tablas dinámicas y agregar filtros, entre otras operaciones. Trabajo profesional propio de cualquier hoja de cálculo accesible tanto desde su ordenador en la oficina como desde su móvil e incluso sin conexión.</p>
@@ -221,16 +235,15 @@
                         <img class="imgmail" src="assets/img/sheetsmock.png" width="700" alt="Sheet G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="forms-description">
+                <div ng-show="showforms" class="row" id="forms-description">
                     <div class="col-md-4">
                         <h5><b>Forms</b></h5>
-                        <p>Todo el ciclo de vida de su investigación resumido en una sola aplicación y sin ningún cargo adicional. Crear un formulario es tan fácil y rápido como trabajar sobre un documento y le permitirá crear encuestas a nivel profesional. Solo arrastrar y soltar para organizar las preguntas, con acceso a todas las respuestas y los análisis de resultados en spreadsheets y en tiempo real.</p>
-                    </div>
+                        <p>Todo el ciclo de vida de su investigación resumido en una sola aplicación y sin ningún cargo adicional. Crear un formulario es tan fácil y rápido como trabajar sobre un documento y le permitirá crear encuestas a nivel profesional. Solo arrastrar y soltar para organizar las preguntas, con acceso a todas las respuestas y los análisis de resultados en spreadsheets y en tiempo real.</p>                    </div>
                     <div class="col-md-8">
                         <img class="imgmail" src="assets/img/formmock.png" width="700" alt="Form G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="slides-description">
+                <div class="row" id="slides-description">
                     <div class="col-md-4">
                         <h5><b>Slides</b></h5>
                         <p>Las presentaciones en el formato más seguro, sin cambios imprevistos y con acceso online y offline. Las diapositivas son fáciles de crear bien a partir de una plantilla o bien personalizando el diseño desde cero. Afiance la comunicación visual de su empresa en unos pocos pasos, a nivel profesional.<>/p>
@@ -239,7 +252,7 @@
                         <img class="imgmail" src="assets/img/slidesmock.png" width="700" alt="Slide G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext apptext" id="sites-description">
+                <div class="row" id="sites-description">
                     <div class="col-md-4">
                         <h5><b>Sites</b></h5>
                         <p>Todo su equipo puede tener acceso a la web de su propio departamento o proyecto, y será una web profesional. Es la forma más sencilla de crear un sitio, con acceso directo a todo su contenido en drive, documentos o incluso el calendario. Aproveche los temas creados especialmente para que su contenido destaque con un aspecto optimizado automáticamente en todos los dispositivos.</p>
@@ -248,7 +261,7 @@
                         <img class="imgmail" src="assets/img/sitesmock.png" width="700" alt="Sites G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="drive-description">
+                <div class="row" id="drive-description">
                     <div class="col-md-4">
                         <h5><b>Drive</b></h5>
                         <p>Todo el almacenamiento que necesite, con sus archivos sincronizados automáticamente y sin software adicional. Todo su trabajo estará en un lugar seguro mediante el almacenamiento de archivos en línea para que acceda a él cuando lo necesite y desde dónde lo necesite. 30Gb, 1Tb o almacenamiento ilimitado y sincronizado con la carpeta enlazada en su ordenador, cualquier cambio local se sincronizará en Drive automáticamente y viceversa.</p>
@@ -257,7 +270,7 @@
                         <img class="imgmail" src="assets/img/drivemock.png" width="700" alt="Drive G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="admin-description">
+                <div class="row" id="admin-description">
                     <div class="col-md-4">
                         <h5><b>Admin</b></h5>
                         <p>Asistencia y confiabilidad todos los días durante las 24 horas, con la mayor seguridad y control aplicada también a dispositivos móviles. La administración centralizada le permite una configuración y una gestión rápidas y fáciles, con la posibilidad de agregar y quitar usuarios, configurar grupos y agregar diversas opciones de seguridad. Y con la administración de dispositivos móviles puede distribuir aplicaciones, administrar la configuración de seguridad o incluso borrar los dispositivos de forma remota.</p>
@@ -266,7 +279,7 @@
                         <img class="imgmail" src="assets/img/adminmock.png" width="700" alt="Admin G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row gsuite-description apptext" id="keep-description">
+                <div class="row" id="keep-description">
                     <div class="col-md-4">
                         <h5><b>Vault</b></h5>
                         <p>Archivo tanto de correo electrónico como de chat y búsquedas con la tecnología de Google para encontrar contenido rápidamente. Usted decide durante cuánto tiempo se conservarán los mensajes de correo electrónico y los chats registrados, especificando políticas adaptadas a sus necesidades. Nunca volverá a perder información valiosa, puede recuperarla incluso de cuentas cerradas para evitar la pérdida de datos debido a la rotación de personal.</p>

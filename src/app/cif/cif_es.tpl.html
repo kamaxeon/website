@@ -6,7 +6,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
-            <a class="page-scroll" href="#about"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
+            <a class="page-scroll" ui-sref="home"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbarResposive">
@@ -18,11 +18,11 @@
                     </a>
                     <div class="dropdown-menu">
                         <div>
-                            <a class="dropdown-item" ui-sref="services">Asociado a Gougle Cloud</a>
+                            <a class="dropdown-item" ui-sref="services" ui-sref-active="active">Asociado a Gougle Cloud</a>
                             <p class="dropdown-item nav-divider"></p>
                             <a class="dropdown-item" ui-sref="iplusd">Investigación + Desarrollo</a>
                             <p class="dropdown-item nav-divider"></p>
-                            <a class="dropdown-item" ui-sref="cif">Consultoría/Factoría</a>
+                            <a class="dropdown-item" ui-sref="cif">Consultoría / Factoría</a>
                         </div>
                     </div>
                 </li>

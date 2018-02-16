@@ -1,5 +1,5 @@
 <!-- Navigation  -->
-<nav id="teamNav" class="navbar navbar-default navbar-custom navbar-fixed-top principalnavitation cabecera-hidden">
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top principalnavitation cabecera-hidden">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -9,29 +9,35 @@
             <a class="page-scroll" ui-sref="home"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="navbarResposive">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden"><a href="#page-top"></a></li>
-                <li><a class="page-scroll" ui-sref="services">Qué hacemos</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Qué hacemos
+                    </a>
+                    <div class="dropdown-menu">
+                        <div>
+                            <a class="dropdown-item" ui-sref="services" ui-sref-active="active">Asociado a Gougle Cloud</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="iplusd">Investigación + Desarrollo</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="cif">Consultoría / Factoría</a>
+                        </div>
+                    </div>
+                </li>
                 <li><a class="page-scroll" ui-sref="team">Quiénes somos</a></li>
                 <li><a class="page-scroll" ui-sref="contact">Contacto</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<br>
-<br>
-<br>
-<br>
-<br>
+<!-- /Navigation end -->
 <!--tittle background-->
 <div id="team" class="container">
     <div class="row">
         <div class="col-md-12">
             <h2 class="BigTitle equipo-title wow animated fadeInLeft animated">Quiénes somos</h2>
-            <!--<div class="imagen-fondo">
-<span class="titulos-fondo equipo-title wow animated fadeInLeft animated">Quiénes somos</span>
-</div>-->
         </div>
     </div>
 </div>
