@@ -8,10 +8,8 @@ addons:
     packages:
     - npm
 
-before_install:
-  - sudo npm -g install grunt-cli karma bower
-
 install:
+  - sudo npm -g install grunt-cli karma bower
   - npm install
   - bower install
 
