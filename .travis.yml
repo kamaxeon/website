@@ -2,7 +2,7 @@
 language: node_js
 
 node_js:
-  - -stable
+  - stable
 
 befor_script:
   - npm -g install grunt-cli karma bower
