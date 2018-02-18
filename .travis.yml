@@ -1,15 +1,11 @@
 ---
-sudo: required
-language: generic
-dist: trusty 
+language: node_js
 
-addons:
-  apt:
-    packages:
-    - npm
+node_js:
+  - -stable
 
-install:
-  - sudo npm -g install grunt-cli karma bower
+befor_script:
+  - npm -g install grunt-cli karma bower
   - npm install
   - bower install
 
