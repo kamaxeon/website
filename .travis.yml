@@ -4,9 +4,8 @@ language: node_js
 node_js:
   - stable
 
-install:
+before_script:
   - npm -g install grunt-cli karma bower
-  - npm install
   - bower install
 
 script:
