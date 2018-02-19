@@ -80,55 +80,6 @@
         <!--G SUITE iconos-->
         <!--Aquí empieza g suite iconos-->
         <div id="mas" class="rectangle-1">
-            <div class="container">
-                <div class="row margin-row">
-                    <div class="col-md-3">
-                        <div class="service-box service-box text-center wow animated fadeInLeft animated">
-                                <h5>Comunica</h5>
-                                <img src="assets/img/gsuite-1.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
-                                <span class="section-line"></span>
-                                <br>
-                                <p>
-                                    Desde una sola interfaz tendrá comunicación por correo, chats de texto, llamadas de voz o videollamadas en HD. Comparta la pantalla y gestione los recursos de su empresa.
-                                </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service-box service-box text-center wow animated fadeInLeft animated">
-                            <h5>Colabora</h5>
-                            <img src="assets/img/gsuite-3.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
-                            <span class="section-line"></span>
-                            <br>
-                            <p>
-                                Cree y edite documentos de texto desde cualquier dispositivo con control de versiones integrado. Compatible con los formatos más extendidos.<br/>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service-box text-center wow animated fadeInLeft animated" data-wow-delay="0.6s">
-                            <h5>Almacena</h5>
-                            <img src="assets/img/gsuite-2.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
-                            <span class="section-line"></span>
-                            <br>
-                            <p>
-                                Espacio ilimitado con G Suite Business sin mantenimiento de hardware. Más de 500 de los mejores expertos de seguridad trabajando para su empresa.
-                                <br/>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="service-box text-center wow animated fadeInLeft animated" data-wow-delay="0.8s">
-                            <h5>Gestiona</h5>
-                            <img src="assets/img/gsuite-4.png" alt="G Suite icons" class="wow animated fadeIn" width=200>
-                            <span class="section-line"></span>
-                            <br>
-                            <p>
-                                Con G Suite Business tendrá más de 200 políticas de seguridad y configuración para eliminar carga de trabajo a su departamento de IT. Retención y archivo hasta 100 años con Google Vault.
-                            </p>
-                        </div>
-                    </div>
-                <!--service col-->
-            </div>
             <div class="row gsuite-large lateral-padding">
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" id="gmailicon">
                     <img id="gmail-indicator" class="gsuite-icons" src="assets/img/gmailicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-gmail')" alt="G Mail icon">
@@ -175,8 +126,8 @@
                     <div ng-show="showadmin" class="indicator"></div>
                 </div>
                 <div class="col-sm-1 wow animated fadeInLeft animated withmargin" data-wow-delay="1.1s" id="keepicon">
-                    <img id="keep-indicator" class="gsuite-icons" src="assets/img/keepicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-keep')" alt="Keep icon">
-                    <div ng-show="showkeep" class="indicator"></div>
+                    <img id="keep-indicator" class="gsuite-icons" src="assets/img/keepicon.png" style="cursor:pointer" width="40px" height="45px" ng-click="openInNewWindow('show-keeps')" alt="Keep icon">
+                    <div ng-show="showkeeps" class="indicator"></div>
                 </div>
             </div>
             <div class="gsuite-large lateral-padding gicons-description wow animated fadeIn animated" data-wow-delay="1.2s">
@@ -243,7 +194,7 @@
                         <img class="imgmail" src="assets/img/formmock.png" width="700" alt="Form G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row" id="slides-description">
+                <div ng-show="showslides" class="row" id="slides-description">
                     <div class="col-md-4">
                         <h5><b>Slides</b></h5>
                         <p>Las presentaciones en el formato más seguro, sin cambios imprevistos y con acceso online y offline. Las diapositivas son fáciles de crear bien a partir de una plantilla o bien personalizando el diseño desde cero. Afiance la comunicación visual de su empresa en unos pocos pasos, a nivel profesional.<>/p>
@@ -252,7 +203,7 @@
                         <img class="imgmail" src="assets/img/slidesmock.png" width="700" alt="Slide G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row" id="sites-description">
+                <div ng-show="showsites" class="row" id="sites-description">
                     <div class="col-md-4">
                         <h5><b>Sites</b></h5>
                         <p>Todo su equipo puede tener acceso a la web de su propio departamento o proyecto, y será una web profesional. Es la forma más sencilla de crear un sitio, con acceso directo a todo su contenido en drive, documentos o incluso el calendario. Aproveche los temas creados especialmente para que su contenido destaque con un aspecto optimizado automáticamente en todos los dispositivos.</p>
@@ -261,7 +212,7 @@
                         <img class="imgmail" src="assets/img/sitesmock.png" width="700" alt="Sites G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row" id="drive-description">
+                <div ng-show="showdrives" class="row" id="drive-description">
                     <div class="col-md-4">
                         <h5><b>Drive</b></h5>
                         <p>Todo el almacenamiento que necesite, con sus archivos sincronizados automáticamente y sin software adicional. Todo su trabajo estará en un lugar seguro mediante el almacenamiento de archivos en línea para que acceda a él cuando lo necesite y desde dónde lo necesite. 30Gb, 1Tb o almacenamiento ilimitado y sincronizado con la carpeta enlazada en su ordenador, cualquier cambio local se sincronizará en Drive automáticamente y viceversa.</p>
@@ -270,7 +221,7 @@
                         <img class="imgmail" src="assets/img/drivemock.png" width="700" alt="Drive G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row" id="admin-description">
+                <div ng-show="showadmin" class="row" id="admin-description">
                     <div class="col-md-4">
                         <h5><b>Admin</b></h5>
                         <p>Asistencia y confiabilidad todos los días durante las 24 horas, con la mayor seguridad y control aplicada también a dispositivos móviles. La administración centralizada le permite una configuración y una gestión rápidas y fáciles, con la posibilidad de agregar y quitar usuarios, configurar grupos y agregar diversas opciones de seguridad. Y con la administración de dispositivos móviles puede distribuir aplicaciones, administrar la configuración de seguridad o incluso borrar los dispositivos de forma remota.</p>
@@ -279,7 +230,7 @@
                         <img class="imgmail" src="assets/img/adminmock.png" width="700" alt="Admin G Suite" class="wow animated fadeIn">
                     </div>
                 </div>
-                <div class="row" id="keep-description">
+                <div ng-show="showkeeps" class="row" id="keep-description">
                     <div class="col-md-4">
                         <h5><b>Vault</b></h5>
                         <p>Archivo tanto de correo electrónico como de chat y búsquedas con la tecnología de Google para encontrar contenido rápidamente. Usted decide durante cuánto tiempo se conservarán los mensajes de correo electrónico y los chats registrados, especificando políticas adaptadas a sus necesidades. Nunca volverá a perder información valiosa, puede recuperarla incluso de cuentas cerradas para evitar la pérdida de datos debido a la rotación de personal.</p>

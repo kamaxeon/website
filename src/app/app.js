@@ -7,20 +7,31 @@ angular.module( 'edosoft', [
 
     .config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider) {
 
-          $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-          });
+        $urlRouterProvider.otherwise( '/home' );
+
+        /*$locationProvider.html5Mode({
+          enabled: true,
+          requireBase: true
+        });*/
 
         $stateProvider
             .state('home',{
-                url:'/',
+                url:'/home',
                 views: {
                    "main": {
                       controller: 'HomeCtrl',
                       templateUrl: 'home/home_es.tpl.html'
                    }
                 }
+            })
+            .state('home_en', {
+              url: '/home/en',
+              views: {
+                "main": {
+                  controller:'HomeCtrl',
+                  templateUrl: 'home/home_en.tpl.html'
+                }
+              }
             })
             .state('info', {
                 url: '/info',
@@ -32,22 +43,13 @@ angular.module( 'edosoft', [
                 }
             })
             .state('info_en', {
-                    url: '/en/info',
+                    url: '/info/en',
                     views: {
                         "main": {
                             controller: 'InfoCtrl',
                             templateUrl: 'info/info_en.tpl.html'
                         }
                     }
-            })
-            .state('home_en', {
-                url: '/en/home',
-                views: {
-                    "main": {
-                        controller:'HomeCtrl',
-                        templateUrl: 'home/home_en.tpl.html'
-                    }
-                }
             })
             .state('team', {
                 url: '/team',
@@ -59,7 +61,7 @@ angular.module( 'edosoft', [
                 }
             })
             .state('team_en', {
-                url: '/en/team',
+                url: '/team/en',
                 views: {
                     "main": {
                         controller: 'TeamCtrl',
@@ -77,7 +79,7 @@ angular.module( 'edosoft', [
                 }
             })
             .state('services_en', {
-                url: '/en/services',
+                url: '/services/en',
                 views: {
                     "main": {
                         controller: 'ServicesCtrl',
@@ -95,7 +97,7 @@ angular.module( 'edosoft', [
               }
             })
             .state('iplusd_en', {
-              url: '/en/iplusd',
+              url: '/iplusd/en',
               views: {
                 "main": {
                   controller: 'IplusdCtrl',
@@ -113,7 +115,7 @@ angular.module( 'edosoft', [
               }
             })
             .state('cif_en', {
-              url: '/en/cif',
+              url: '/consultora-factora/en',
               views: {
                 "main": {
                   controller: 'CifCtrl',
@@ -131,7 +133,7 @@ angular.module( 'edosoft', [
                 }
             })
             .state('contact_en', {
-                url: '/en/contact',
+                url: '/contact/en',
                 views: {
                     "main": {
                         controller: 'ContactCtrl',
@@ -149,7 +151,7 @@ angular.module( 'edosoft', [
                 }
             })
             .state('about_en', {
-                url: '/en/about',
+                url: '/about/en',
                 views: {
                     "main": {
                         controller: 'AboutCtrl',
@@ -159,34 +161,37 @@ angular.module( 'edosoft', [
             });
   })
 
-    .controller( 'AppCtrl', function AppCtrl ( $scope, $location) {
-    /*      $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-      if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
-   }); }*/
+    .controller( 'AppCtrl', function AppCtrl ( $scope, $location, $window,$state) {
+            $(window).bind('beforeunload', function () {
+              console.log('Chupate esa que es de fresa',$state.current);
+
+            });
+          console.log('AppCtrl',$state.current,$scope.pageTitle);
     })
 
-    .controller('HomeCtrl', function HomeCtrl($scope,$window) {
+    .controller('HomeCtrl', function HomeCtrl($state,$scope,$window) {
+      $window.scrollTo(0, 0);
+      console.log($state.current);
+
+    })
+
+    .controller( 'InfoCtrl', function InfoCtrl ($state,$scope,$window) {
         $window.scrollTo(0, 0);
 
     })
-
-    .controller( 'InfoCtrl', function InfoCtrl ($scope,$window) {
+    .controller( 'ContactCtrl', function ContactCtrl ($state, $scope, $window) {
         $window.scrollTo(0, 0);
 
     })
-    .controller( 'ContactCtrl', function ContactCtrl ($scope, $window) {
-        $window.scrollTo(0, 0);
-
-    })
-    .controller( 'TeamCtrl', function TeamCtrl ($scope, $window ) {
+    .controller( 'TeamCtrl', function TeamCtrl ($state, $scope, $window ) {
          $window.scrollTo(0, 0);
     })
-    .controller( 'CifCtrl', function CifCtrl ($scope, $window ) {
+    .controller( 'CifCtrl', function CifCtrl ($state, $scope, $window ) {
       $window.scrollTo(0, 0);
 
     })
-    .controller( 'ServicesCtrl', function ServicesCtrl ($scope, $window) {
+    .controller( 'ServicesCtrl', function ServicesCtrl ($state, $scope, $window) {
+            console.log($state.current);
             $window.scrollTo(0, 0);
             $scope.showgmail =  true;
             $scope.showcalendar =  false;
@@ -195,6 +200,11 @@ angular.module( 'edosoft', [
             $scope.showdocs = false;
             $scope.showspreasdsheets = false;
             $scope.showforms = false;
+            $scope.showslides = false;
+            $scope.showsites = false;
+            $scope.showdrives = false;
+            $scope.showadmin = false;
+            $scope.showkeeps = false;
 
               // Image click behaviour
               $scope.openInNewWindow = function(id){
@@ -255,25 +265,100 @@ angular.module( 'edosoft', [
                         $scope.showcalendar =  false;
                         $scope.showforms = true;
                         break;
+                      case 'show-slides':
+                        $scope.showslides = true;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreasdsheets = false;
+                        $scope.showforms = false;
+                        $scope.showsites = false;
+                        $scope.showdrives = false;
+                        $scope.showadmin = false;
+                        $scope.showkeeps = false;
+                        break;
+                      case 'show-sites':
+                        $scope.showsites = true;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreasdsheets = false;
+                        $scope.showforms = false;
+                        $scope.showslides = false;
+                        $scope.showdrives = false;
+                        $scope.showadmin = false;
+                        $scope.showkeeps = false;
+                        break;
+                      case 'show-drives':
+                        $scope.showdrives = true;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreasdsheets = false;
+                        $scope.showforms = false;
+                        $scope.showslides = false;
+                        $scope.showsites = false;
+                        $scope.showadmin = false;
+                        $scope.showkeeps = false;
+                        break;
+                      case 'show-admin':
+                        $scope.showadmin = true;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreasdsheets = false;
+                        $scope.showforms = false;
+                        $scope.showslides = false;
+                        $scope.showsites = false;
+                        $scope.showdrives = false;
+                        $scope.showkeeps = false;
+                        break;
+                      case 'show-keeps':
+                        $scope.showkeeps = true;
+                        $scope.showgmail =  false;
+                        $scope.showcalendar =  false;
+                        $scope.showhangouts =  false;
+                        $scope.showgplus =  false;
+                        $scope.showdocs = false;
+                        $scope.showspreasdsheets = false;
+                        $scope.showforms = false;
+                        $scope.showslides = false;
+                        $scope.showsites = false;
+                        $scope.showdrives = false;
+                        $scope.showadmin = false;
+                        break;
                       default:
                         $scope.showgmail =  true;
                         $scope.showcalendar =  false;
                         $scope.showhangouts =  false;
                         $scope.showgplus =  false;
                         $scope.showdocs = false;
-                        $scope.showspreadsheets = false;
+                        $scope.showspreasdsheets = false;
                         $scope.showforms = false;
+                        $scope.showslides = false;
+                        $scope.showsites = false;
+                        $scope.showdrives = false;
+                        $scope.showadmin = false;
+                        $scope.showkeeps = false;
                     }
 
               };
 
 
     })
-    .controller( 'AboutCtrl', function AboutCtrl ($scope,$window) {
+    .controller( 'AboutCtrl', function AboutCtrl ($state,$scope,$window) {
     $window.scrollTo(0, 0);
 
     })
-    .controller( 'IplusdCtrl', function IplusdCtrl ( $scope, $window) {
+    .controller( 'IplusdCtrl', function IplusdCtrl ($state, $scope, $window) {
     $window.scrollTo(0, 0);
     })
 

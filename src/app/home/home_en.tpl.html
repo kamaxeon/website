@@ -6,23 +6,23 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
             </button>
-            <a class="page-scroll" href="#about"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
+            <a class="page-scroll" ui-sref="home_en"><img  class="dropdown " ng-click="scrollTo('myCarousel')" src="assets/img/logo-blue.png" alt="Edosoft Factory"  style=" margin-top:20px; width:100%; max-width:200px"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbarResposive">
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden"><a href="#page-top"></a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <a class="nav-link dropdown-toggle" ui-sref="home" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         Services
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                    <div class="dropdown-menu">
                         <div>
-                            <a class="dropdown-item"  ui-sref="services">Gougle Cloud Partner</a>
-                            <p class="dropdown-item divider"></p>>
-                            <a class="dropdown-item" href="#">I + D</a>
-                            <p class="dropdown-item divider"></p>
-                            <a class="dropdown-item" href="#">Consultoría/Factoría</a>
+                            <a class="dropdown-item" ui-sref="services" ui-sref-active="active">Gougle Cloud Partner</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="iplusd">Research + Development</a>
+                            <p class="dropdown-item nav-divider"></p>
+                            <a class="dropdown-item" ui-sref="cif">Consultancy / Factory</a>
                         </div>
                     </div>
                 </li>
@@ -73,7 +73,7 @@
     <div class="container" >
         <h4 class="col-md-6">
             <div class="blue-indicator-tittle"></div>
-            Desde consultoría tecnológica hasta formación especializada
+            Desde consultoría tecnológica hasta formación especializada (need traslate)
         </h4>
         <div class="row">
             <div class="col-md-8">
@@ -250,7 +250,7 @@
                         <span>&copy; 2017 Edosoft Factory S.L. All rights reserved.</span>
                         <span>
                             <a ui-sref="info_en"><span>Legal Information.</span></a>
-                            <a href="home"><span class="active">Versión en español</span></a>
+                            <a ui-sref="home"><span class="active">Versión en español</span></a>
                             <!--TODO:Incluir link a página con info legal-->
                         </span>
                     </div>

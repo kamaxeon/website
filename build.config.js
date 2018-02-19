@@ -77,9 +77,8 @@ module.exports = {
         'vendor/angulartics/dist/angulartics.min.js',
         'vendor/angulartics/dist/angulartics-ga.min.js',
         'vendor/angulartics/dist/angulartics-scroll.min.js',
-        'vendor/angular-feeds/app/angular-feeds/angular-feeds.js',
-        'vendor/angular-touch/angular-touch.min.js',
-        'vendor/angular-carousel/dist/angular-carousel.min.js'
+        'vendor/angular-feeds/app/angular-feeds/angular-feeds.js'
+
 
     ],
     css: [
