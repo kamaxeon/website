@@ -30,6 +30,7 @@
     "grunt-contrib-watch": "^0.4.4",
     "grunt-html2js": "^0.1.9",
     "grunt-ng-annotate": "^0.8.0",
+    "grunt-pagespeed": "^2.0.1",
     "grunt-release-it": "^0.2.1",
     "grunt-robots-txt": "^0.3.0"
   }

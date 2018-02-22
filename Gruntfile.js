@@ -62,6 +62,9 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-release-it');
   grunt.loadNpmTasks('grunt-robots-txt');
+  grunt.loadNpmTasks('grunt-pagespeed');
+  
+  var bucket = grunt.option('bucket');
 
   /**
    * Load in our build configuration file.
@@ -158,6 +161,38 @@ module.exports = function ( grunt ) {
         pushTo: 'origin'
       }
     },    
+  pagespeed: {
+    options: {
+      nokey: true,
+      threshold: 80,
+      //url: "http://izumi.edosoft.es"
+      url: "http://" + grunt.option('bucket')
+    },
+    desktop_en: {
+      options: {
+        locale: "en_GB",
+        strategy: "desktop"
+      }
+    },
+    desktop_sp: {
+      options: {
+        locale: "es_ES",
+        strategy: "desktop"
+      }
+    },
+    mobile_en: {
+      options: {
+        locale: "en_GB",
+        strategy: "mobile"
+      }
+    },
+    mobiile_sp: {
+      options: {
+        locale: "es_ES",
+        strategy: "mobile"
+      }
+    }
+  },
 
     /**
      * The directories to delete when `grunt clean` is executed.
