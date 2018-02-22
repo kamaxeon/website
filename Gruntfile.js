@@ -164,9 +164,8 @@ module.exports = function ( grunt ) {
   pagespeed: {
     options: {
       nokey: true,
-      threshold: 80,
-      //url: "http://izumi.edosoft.es"
-      url: "http://" + grunt.option('bucket')
+      url: grunt.option('url'),
+      threshold: grunt.option('score')
     },
     desktop_en: {
       options: {
